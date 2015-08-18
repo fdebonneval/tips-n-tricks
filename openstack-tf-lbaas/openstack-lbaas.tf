@@ -39,7 +39,7 @@ resource "openstack_networking_floatingip_v2" "tf-floating-00" {
 resource "openstack_networking_router_v2" "tf-router-00" {
   name = "tf-router-00"
   admin_state_up = "true"
-  external_gateway = "4a0d5db1-f30f-491c-b342-af80143a31ea"
+  external_gateway = "6ea98324-0f14-49f6-97c0-885d1b8dc517"
 }
 
 resource "openstack_networking_router_interface_v2" "tf-router-north" {
@@ -48,13 +48,19 @@ resource "openstack_networking_router_interface_v2" "tf-router-north" {
 }
 
 # Security groups
-resource "openstack_compute_secgroup_v2" "tf-sg-icmp-ssh" {
-  name = "tf-sg-icmp-ssh"
+resource "openstack_compute_secgroup_v2" "tf-lb-sg-icmp-ssh" {
+  name = "tf-lb-sg-icmp-ssh"
   description = "ICMP and SSH Security groups"
   rule {
     ip_protocol = "tcp"
     from_port = "22"
     to_port = "22"
+    cidr = "0.0.0.0/0"
+  }
+  rule {
+    ip_protocol = "tcp"
+    from_port = "80"
+    to_port = "80"
     cidr = "0.0.0.0/0"
   }
   rule {
@@ -88,10 +94,10 @@ resource "openstack_compute_instance_v2" "tf-bst-00" {
   network {
     uuid = "${openstack_networking_network_v2.tf-net-north.id}"
   }
-  image_id = "5db66a8a-3165-4606-982d-43e89846c16f"
-  flavor_id = "3"
+  image_id = "ae3082cb-fac1-46b1-97aa-507aaa8f184f"
+  flavor_id = "17"
   key_pair = "foucault"
-  security_groups = ["tf-sg-icmp-ssh"]
+  security_groups = ["tf-lb-sg-icmp-ssh"]
 }
 
 # Create front server
@@ -100,10 +106,10 @@ resource "openstack_compute_instance_v2" "tf-front-00" {
   network {
     uuid = "${openstack_networking_network_v2.tf-net-north.id}"
   }
-  image_id = "5db66a8a-3165-4606-982d-43e89846c16f"
-  flavor_id = "3"
+  image_id = "ae3082cb-fac1-46b1-97aa-507aaa8f184f"
+  flavor_id = "17"
   key_pair = "foucault"
-  security_groups = ["tf-sg-icmp-ssh","tf-sg-80-443"]
+  security_groups = ["tf-lb-sg-icmp-ssh","tf-sg-80-443"]
   user_data = "${file(\"files/cloud-init-front.sh\")}"
 }
 
@@ -112,10 +118,10 @@ resource "openstack_compute_instance_v2" "tf-front-01" {
   network {
     uuid = "${openstack_networking_network_v2.tf-net-north.id}"
   }
-  image_id = "5db66a8a-3165-4606-982d-43e89846c16f"
-  flavor_id = "3"
+  image_id = "ae3082cb-fac1-46b1-97aa-507aaa8f184f"
+  flavor_id = "17"
   key_pair = "foucault"
-  security_groups = ["tf-sg-icmp-ssh","tf-sg-80-443"]
+  security_groups = ["tf-lb-sg-icmp-ssh","tf-sg-80-443"]
   user_data = "${file(\"files/cloud-init-front.sh\")}"
 }
 
@@ -124,7 +130,7 @@ resource "openstack_lb_pool_v1" "tf-lbpool-00" {
   name = "tf-lbpool-00"
   protocol = "HTTP"
   subnet_id = "${openstack_networking_subnet_v2.tf-subnet-north.id}"
-  lb_method = "ROUND_ROBIN"
+  lb_method = "SOURCE_IP"
   member {
     address = "${openstack_compute_instance_v2.tf-front-00.access_ip_v4}"
     port = 80
@@ -152,7 +158,7 @@ resource "openstack_lb_pool_v1" "tf-lbpool-01" {
   name = "tf-lbpool-01"
   protocol = "TCP"
   subnet_id = "${openstack_networking_subnet_v2.tf-subnet-north.id}"
-  lb_method = "ROUND_ROBIN"
+  lb_method = "SOURCE_IP"
   member {
     address = "${openstack_compute_instance_v2.tf-front-00.access_ip_v4}"
     port = 443

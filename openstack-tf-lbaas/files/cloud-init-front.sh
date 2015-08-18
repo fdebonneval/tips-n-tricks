@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y nginx openssl
+apt-get install -y nginx openssl php5-fpm
 
 mkdir /etc/nginx/ssl
 
@@ -74,7 +74,42 @@ server {
 
         ssl_certificate /etc/nginx/ssl/server.crt;
         ssl_certificate_key /etc/nginx/ssl/server.key;
+
+        location ~ \.php$ {
+	        try_files $uri =404;
+                fastcgi_pass unix:/var/run/php5-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include fastcgi_params;
+	}
+
 }
 EOF
+
+cat /etc/php5/fpm/php.ini > toto
+sed 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/' toto > /etc/php5/fpm/php.ini
+
+cat > /usr/share/nginx/html/12345.php <<EOF
+$(hostname)
+<br>
+<?php
+phpinfo();
+?>
+EOF
+
+cat > /usr/share/nginx/html/12345-headers.php <<EOF
+$(hostname)
+<br>
+<?php
+foreach($_SERVER as $h=>$v)
+  if(ereg('HTTP_(.+)',$h,$hp))
+    echo "<li>$h = $v</li>\n";
+header('Content-type: text/html');
+
+session_start();
+echo session_id();
+?>
+EOF
+
 
 service nginx restart
