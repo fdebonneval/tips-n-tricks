@@ -8,14 +8,18 @@ consul:
     - 8301:8301/udp
     - 8400:8400
     - 8500:8500
+  expose:
+    - 8500
   command: -node=consul -server -bootstrap -ui-dir /ui
     
 
 registrator:
   image: gliderlabs/registrator:latest
   net: "host"
-  volume: /var/run/docker.sock:/tmp/docker.sock
-  command: /bin/registrator consul://consul:8500
+  working_dir: /tmp
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+  command: consul://localhost:8500
   links:
    - consul
 
@@ -23,4 +27,9 @@ registrator:
 #haproxy:
 
 
-#nginx:
+www-front:
+  build: ./www-front
+#  ports:
+#    - 80
+#    - 443
+  entrypoint: /usr/sbin/nginx
