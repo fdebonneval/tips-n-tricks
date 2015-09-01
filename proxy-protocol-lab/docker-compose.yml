@@ -16,6 +16,8 @@ registrator:
   net: "host"
   volume: /var/run/docker.sock:/tmp/docker.sock
   command: /bin/registrator consul://consul:8500
+  links:
+   - consul
 
 
 haproxy:
