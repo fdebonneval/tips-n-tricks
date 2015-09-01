@@ -20,7 +20,7 @@ registrator:
    - consul
 
 
-haproxy:
+#haproxy:
 
 
-nginx:
+#nginx:
