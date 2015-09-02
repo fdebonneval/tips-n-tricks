@@ -9,6 +9,7 @@ ADD files/default.conf /tmp/
 ADD files/nginx.conf /tmp/
 ADD files/nginx.list /etc/apt/sources.list.d/
 ADD files/entrypoint.sh /
+RUN chmod +x entrypoint.sh
 
 RUN apt-get update
 RUN apt-get install  openssl php5-fpm=${PHP_VERSION} -y nginx=${NGINX_VERSION}
