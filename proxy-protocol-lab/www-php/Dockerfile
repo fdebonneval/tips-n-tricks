@@ -14,5 +14,5 @@ RUN sed 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/' toto > /etc/php5/fpm/php.ini
 #        -e "s#listen.group = www-data#listen.group = nginx#g" \
 #        /etc/php5/fpm/pool.d/www.conf
 
-VOLUME ["/var/run/php5-fpm.sock"]
+VOLUME ["/var/run"]
 #CMD ["/usr/sbin/php5-fpm"]
