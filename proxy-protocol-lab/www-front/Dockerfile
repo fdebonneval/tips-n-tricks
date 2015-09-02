@@ -20,7 +20,7 @@ RUN cat /etc/php5/fpm/php.ini > toto
 RUN sed 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/' toto > /etc/php5/fpm/php.ini
 RUN rm /usr/share/nginx/html/index.html
 RUN cat /tmp/default.conf > /etc/nginx/conf.d/default.conf
-RUN cat /tmp/nginx.conf > /etc/nginx.conf
+RUN cat /tmp/nginx.conf > /etc/nginx/nginx.conf
 
 ADD files/server.key /etc/nginx/ssl/
 ADD files/server.crt /etc/nginx/ssl/
