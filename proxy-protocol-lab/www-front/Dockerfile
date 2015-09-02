@@ -9,15 +9,20 @@ ADD files/nginx.conf /tmp/
 ADD files/nginx.list /etc/apt/sources.list.d/
 
 RUN apt-get update
-RUN apt-get install  openssl php5-fpm -y nginx=${NGINX_VERSION}
+#RUN apt-get install  openssl php5-fpm -y nginx=${NGINX_VERSION}
+RUN apt-get install  openssl -y nginx=${NGINX_VERSION}
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 RUN mkdir /etc/nginx/ssl
-RUN cat /etc/php5/fpm/php.ini > toto
-RUN sed 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/' toto > /etc/php5/fpm/php.ini
+# RUN cat /etc/php5/fpm/php.ini > toto
+#RUN sed 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/' toto > /etc/php5/fpm/php.ini
+#RUN sed -i \
+#        -e "s#listen.owner = www-data#listen.owner = nginx#g" \
+#        -e "s#listen.group = www-data#listen.group = nginx#g" \
+#        /etc/php5/fpm/pool.d/www.conf
 RUN rm /usr/share/nginx/html/index.html
 RUN cat /tmp/default.conf > /etc/nginx/conf.d/default.conf
 RUN cat /tmp/nginx.conf > /etc/nginx/nginx.conf
