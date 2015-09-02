@@ -29,7 +29,12 @@ registrator:
 
 www-front:
   build: ./www-front
-#  ports:
-#    - 80
-#    - 443
+  ports:
+    - 80
+    - 443
+  volumes_from:
+    - www-php
   entrypoint: /usr/sbin/nginx
+
+www-php:
+  build: ./www-php
