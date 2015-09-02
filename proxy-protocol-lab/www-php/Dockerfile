@@ -9,10 +9,10 @@ RUN rm -rf /var/lib/apt/lists/*
 
 RUN cat /etc/php5/fpm/php.ini > toto
 RUN sed 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/' toto > /etc/php5/fpm/php.ini
-RUN sed -i \
-        -e "s#listen.owner = www-data#listen.owner = nginx#g" \
-        -e "s#listen.group = www-data#listen.group = nginx#g" \
-        /etc/php5/fpm/pool.d/www.conf
+#RUN sed -i \
+#        -e "s#listen.owner = www-data#listen.owner = nginx#g" \
+#        -e "s#listen.group = www-data#listen.group = nginx#g" \
+#        /etc/php5/fpm/pool.d/www.conf
 
 VOLUME ["/var/run/php5-fpm.sock"]
 #CMD ["/usr/sbin/php5-fpm"]
