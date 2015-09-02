@@ -5,7 +5,7 @@ ENV NGINX_VERSION 1.8.0-1~trusty
 
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 ADD files/default.conf /tmp/
-ADD files/nginx.conf /tmp
+ADD files/nginx.conf /tmp/
 ADD files/nginx.list /etc/apt/sources.list.d/
 
 RUN apt-get update
