@@ -26,6 +26,8 @@ registrator:
 
 haproxy:
   build: ./haproxy
+  links:
+    - consul:consul
   expose:
     - 80
     - 443
