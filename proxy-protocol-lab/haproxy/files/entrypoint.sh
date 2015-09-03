@@ -1,6 +1,8 @@
 #!/bin/bash
 
-consul-template -consul=${CONSUL_PORT_8500_TCP_ADDR}:8500 -template="./haproxy.ctmpl:/etc/haproxy/haproxy.cfg:"&
+CONSUL_TEMPLATE_PATH=$1
+
+${CONSUL_TEMPLATE_PATH}/consul-template -consul=${CONSUL_PORT_8500_TCP_ADDR}:8500 -template="${CONSUL_TEMPLATE_PATH}/haproxy.ctmpl:/etc/haproxy/haproxy.cfg:"&
 
 while true
 do SUM=$(md5sum /etc/haproxy/haproxy.cfg | awk '{print $1}')
