@@ -24,7 +24,11 @@ registrator:
    - consul
 
 
-#haproxy:
+haproxy:
+  build: ./haproxy
+  expose:
+    - 80
+    - 443
 
 
 www-front:
@@ -32,9 +36,5 @@ www-front:
   ports:
     - 80
     - 443
-  volumes_from:
-    - www-php
-  entrypoint: /usr/sbin/nginx
+  entrypoint: /entrypoint.sh
 
-www-php:
-  build: ./www-php
