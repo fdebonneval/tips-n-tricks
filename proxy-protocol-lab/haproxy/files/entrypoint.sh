@@ -2,7 +2,14 @@
 
 CONSUL_TEMPLATE_PATH=$1
 
+
 ${CONSUL_TEMPLATE_PATH}/consul-template -consul=${CONSUL_PORT_8500_TCP_ADDR}:8500 -template="${CONSUL_TEMPLATE_PATH}/haproxy.ctmpl:/etc/haproxy/haproxy.cfg:"&
+
+while test -n -f /etc/haproxy/haproxy.cfg
+do
+  echo "waiting for consul-template to generate /etc/haproxy/haproxy/conf"
+  sleep 1
+done
 
 /usr/sbin/haproxy -D -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid
 sleep 1
