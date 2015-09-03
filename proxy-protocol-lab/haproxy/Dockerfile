@@ -10,4 +10,4 @@ RUN tar zxvf consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tar.gz
 RUN chmod +x entrypoint.sh
 RUN rm consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tar.gz
 
-ENTRYPOINT entrypoint.sh consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64
+CMD entrypoint.sh consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64
