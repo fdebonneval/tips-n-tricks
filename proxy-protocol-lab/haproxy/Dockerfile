@@ -13,4 +13,6 @@ RUN apt-get update
 RUN apt-get install -y haproxy
 RUN rm /etc/haproxy/haproxy.cfg
 
+EXPOSE 80 443 9000
+
 CMD entrypoint.sh consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64
