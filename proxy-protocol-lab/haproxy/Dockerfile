@@ -15,4 +15,4 @@ RUN rm /etc/haproxy/haproxy.cfg
 
 EXPOSE 80 443 9000
 
-CMD entrypoint.sh
+ENTRYPOINT /entrypoint.sh
