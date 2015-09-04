@@ -16,7 +16,7 @@ do SUM=$(md5sum /etc/haproxy/haproxy.cfg | awk '{print $1}')
   if [ "${SUM}" != "${SUM0}" ]
   then
     echo "config file changed, reloading"
-    haproxy -p /var/run/haproxy.pid -sf $(cat /var/run/haproxy.pid)
+    haproxy -p /var/run/haproxy.pid -f /etc/haproxy/haproxy.cfg -sf $(cat /var/run/haproxy.pid)
     SUM0=${SUM}
   fi
   sleep 5
