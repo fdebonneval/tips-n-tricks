@@ -22,9 +22,23 @@ defaults
     errorfile 503 /etc/haproxy/errors/503.http
     errorfile 504 /etc/haproxy/errors/504.http
 
+listen stats 0.0.0.0:9000
+    mode http
+    balance
+    timeout client 5000
+    timeout connect 4000
+    timeout server 30000
+    stats uri /
+
+listen www-front-ssl :443
+    mode tcp
+    option tcplog
+    balance roundrobin{{range service "proxyprotocollab_www-front-443"}}
+    server {{.ID}} {{.Address}}:{{.Port}} check{{end}}
+
 frontend  main *:80
     default_backend    www-front
 
-backend www-front
+backend www-front-http
     balance roundrobin{{range service "proxyprotocollab_www-front-80"}}
     server {{.ID}} {{.Address}}:{{.Port}} check{{end}}
