@@ -36,7 +36,7 @@ listen www-front-ssl :443
     balance roundrobin{{range service "proxyprotocollab_www-front-443"}}
     server {{.ID}} {{.Address}}:{{.Port}} check{{end}}
 
-frontend  main *:80
+frontend  www-front-http *:80
     default_backend    www-front-http
 
 backend www-front-http

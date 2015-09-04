@@ -26,11 +26,13 @@ registrator:
 
 haproxy:
   build: ./haproxy
+  net: "host"
   links:
     - consul:consul
-  expose:
-    - 80
-    - 443
+  ports:
+    - 80:80
+    - 443:443
+    - 9000:9000
 
 
 www-front:
