@@ -45,7 +45,7 @@ resource "openstack_compute_secgroup_v2" "tf-sg-icmp-ssh" {
   }
 }
 
-resource "openstack_networking_floatingip_v2" "tf-floating-00" {
+resource "openstack_networking_floatingip_v2" "floating-00" {
   region = "fr1"
   pool = "public"
 }
@@ -60,5 +60,6 @@ resource "openstack_compute_instance_v2" "tf-vm" {
   flavor_id = "17"
   key_pair = "foucault"
   security_groups = ["${openstack_compute_secgroup_v2.tf-sg-icmp-ssh.name}"]
+  floating_ip = "${openstack_networking_floatingip_v2.floating-00.address}"
   count = 2
 }
