@@ -94,6 +94,7 @@ resource "openstack_compute_instance_v2" "tf-bst-00" {
   network {
     uuid = "${openstack_networking_network_v2.tf-net-north.id}"
   }
+  floating_ip = "${openstack_networking_floatingip_v2.tf-floating-bst.address}"
   image_id = "ae3082cb-fac1-46b1-97aa-507aaa8f184f"
   flavor_id = "17"
   key_pair = "foucault"
@@ -158,7 +159,7 @@ resource "openstack_lb_pool_v1" "tf-lbpool-01" {
   name = "tf-lbpool-01"
   protocol = "TCP"
   subnet_id = "${openstack_networking_subnet_v2.tf-subnet-north.id}"
-  lb_method = "SOURCE_IP"
+  lb_method = "ROUND_ROBIN"
   member {
     address = "${openstack_compute_instance_v2.tf-front-00.access_ip_v4}"
     port = 443
@@ -178,7 +179,7 @@ resource "openstack_lb_vip_v1" "tf-lbvip-01" {
   protocol = "TCP"
   port = 443
   pool_id = "${openstack_lb_pool_v1.tf-lbpool-01.id}"
-#  floating_ip = "${openstack_networking_floatingip_v2.tf-floating-00.id}"
+  floating_ip = "${openstack_networking_floatingip_v2.tf-floating-00.address}"
 }
 
 # Outputs
