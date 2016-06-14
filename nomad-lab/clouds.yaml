@@ -1,0 +1,9 @@
+clouds:
+  cloudwatt:
+    private: true
+    auth:
+      auth_url: https://identity.fr1.cloudwatt.com/v2.0/
+      username: foucault.debonneval-ext+compute@cloudwatt.com
+      password: Vhko8sn7HFhdqG
+      project_name: 6e643832-8a5d-11e3-b8f7-525400872571
+    region_name: fr2

@@ -1,0 +1,886 @@
+{
+  "_meta": {
+    "hostvars": {
+      "05410287-9df0-440a-8b19-9d5b4b4c2b57": {
+        "ansible_ssh_host": "84.39.42.155", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-02-03T23:39:40.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.155", 
+          "accessIPv6": "", 
+          "addresses": {
+            "net-ssbench": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:6c:05:ad:c3:bc", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "10.0.0.2", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:6c:05:ad:c3:bc", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.155", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-02-03T23:39:16Z", 
+          "flavor": {
+            "id": "45", 
+            "name": "n2.cw.standard-8"
+          }, 
+          "hostId": "3f2d25157ab6750d490b9fe33e8d1fd344c11f23b9ea63d87c55ac61", 
+          "human_id": "ssbench-3", 
+          "id": "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.155", 
+          "key_name": "foucault", 
+          "metadata": {}, 
+          "name": "ssbench-3", 
+          "networks": {
+            "net-ssbench": [
+              "10.0.0.2", 
+              "84.39.42.155"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.155", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": null, 
+              "id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1", 
+              "name": "default", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "3b7e6dd3-bf5f-43e3-b2b2-1a93c794a0a2", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": null, 
+                  "remote_ip_prefix": null, 
+                  "security_group_id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1"
+                }
+              ]
+            }, 
+            {
+              "description": "", 
+              "id": "331fcb86-5772-4576-ac53-a5e9b237def2", 
+              "name": "icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "37b7c695-8da3-4a13-b5da-a872f420d064", 
+                  "port_range_max": 255, 
+                  "port_range_min": 0, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "a61c8ea1-97b3-4a1e-b9f5-c8a86aac35db", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T14:22:41Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }, 
+      "255bccf0-aeba-4207-a16e-dabb1bc3565f": {
+        "ansible_ssh_host": "84.39.42.156", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-02-03T23:39:25.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.156", 
+          "accessIPv6": "", 
+          "addresses": {
+            "net-ssbench": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:cd:c0:fa:ec:df", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "10.0.0.6", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:cd:c0:fa:ec:df", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.156", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-02-03T23:39:16Z", 
+          "flavor": {
+            "id": "45", 
+            "name": "n2.cw.standard-8"
+          }, 
+          "hostId": "041edd739424068a3ed4be445ec9417792398cb53dd4309b52e29e5f", 
+          "human_id": "ssbench-5", 
+          "id": "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.156", 
+          "key_name": "foucault", 
+          "metadata": {}, 
+          "name": "ssbench-5", 
+          "networks": {
+            "net-ssbench": [
+              "10.0.0.6", 
+              "84.39.42.156"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.156", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": null, 
+              "id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1", 
+              "name": "default", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "3b7e6dd3-bf5f-43e3-b2b2-1a93c794a0a2", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": null, 
+                  "remote_ip_prefix": null, 
+                  "security_group_id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1"
+                }
+              ]
+            }, 
+            {
+              "description": "", 
+              "id": "331fcb86-5772-4576-ac53-a5e9b237def2", 
+              "name": "icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "37b7c695-8da3-4a13-b5da-a872f420d064", 
+                  "port_range_max": 255, 
+                  "port_range_min": 0, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "a61c8ea1-97b3-4a1e-b9f5-c8a86aac35db", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T13:28:56Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }, 
+      "66356209-3bed-41a7-8e43-58d19a4d21f8": {
+        "ansible_ssh_host": "84.39.42.162", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-03-08T22:39:53.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.162", 
+          "accessIPv6": "", 
+          "addresses": {
+            "tf-net-north": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:1b:43:fa:ce:80", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "192.168.199.4", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:1b:43:fa:ce:80", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.162", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-03-08T22:39:37Z", 
+          "flavor": {
+            "id": "43", 
+            "name": "n2.cw.standard-2"
+          }, 
+          "hostId": "32796359c71ee6cd8e0e1c15577bc9df0bcdb5649e003291a6b5a1dc", 
+          "human_id": "tf-nomad-rpx-00", 
+          "id": "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.162", 
+          "key_name": "foucault-perso", 
+          "metadata": {}, 
+          "name": "tf-nomad-rpx-00", 
+          "networks": {
+            "tf-net-north": [
+              "192.168.199.4", 
+              "84.39.42.162"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.162", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": "ICMP and SSH Security groups", 
+              "id": "67728cbe-028c-4988-b9c1-d75330cee1f0", 
+              "name": "tf-sg-icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "97625a1a-bcb3-4391-a4c1-da35ae1c064f", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "67728cbe-028c-4988-b9c1-d75330cee1f0"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "5da83d09-c1e0-41a3-9212-21fed5e33b6f", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "67728cbe-028c-4988-b9c1-d75330cee1f0"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T22:39:53Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }, 
+      "938d7682-1f94-45b1-9e63-ac21464e40f2": {
+        "ansible_ssh_host": "84.39.42.159", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-02-03T23:39:32.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.159", 
+          "accessIPv6": "", 
+          "addresses": {
+            "net-ssbench": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:ed:56:29:d5:23", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "10.0.0.4", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:ed:56:29:d5:23", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.159", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-02-03T23:39:16Z", 
+          "flavor": {
+            "id": "45", 
+            "name": "n2.cw.standard-8"
+          }, 
+          "hostId": "041edd739424068a3ed4be445ec9417792398cb53dd4309b52e29e5f", 
+          "human_id": "ssbench-4", 
+          "id": "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.159", 
+          "key_name": "foucault", 
+          "metadata": {}, 
+          "name": "ssbench-4", 
+          "networks": {
+            "net-ssbench": [
+              "10.0.0.4", 
+              "84.39.42.159"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.159", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": null, 
+              "id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1", 
+              "name": "default", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "3b7e6dd3-bf5f-43e3-b2b2-1a93c794a0a2", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": null, 
+                  "remote_ip_prefix": null, 
+                  "security_group_id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1"
+                }
+              ]
+            }, 
+            {
+              "description": "", 
+              "id": "331fcb86-5772-4576-ac53-a5e9b237def2", 
+              "name": "icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "37b7c695-8da3-4a13-b5da-a872f420d064", 
+                  "port_range_max": 255, 
+                  "port_range_min": 0, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "a61c8ea1-97b3-4a1e-b9f5-c8a86aac35db", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T13:28:54Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }, 
+      "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2": {
+        "ansible_ssh_host": "84.39.42.158", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-02-03T23:39:26.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.158", 
+          "accessIPv6": "", 
+          "addresses": {
+            "net-ssbench": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:6e:be:4b:35:79", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "10.0.0.3", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:6e:be:4b:35:79", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.158", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-02-03T23:39:15Z", 
+          "flavor": {
+            "id": "45", 
+            "name": "n2.cw.standard-8"
+          }, 
+          "hostId": "af3584066c810e63e8e002015d9f4bfe3b6761aa162073a00792fb4d", 
+          "human_id": "ssbench-2", 
+          "id": "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.158", 
+          "key_name": "foucault", 
+          "metadata": {}, 
+          "name": "ssbench-2", 
+          "networks": {
+            "net-ssbench": [
+              "10.0.0.3", 
+              "84.39.42.158"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.158", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": null, 
+              "id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1", 
+              "name": "default", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "3b7e6dd3-bf5f-43e3-b2b2-1a93c794a0a2", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": null, 
+                  "remote_ip_prefix": null, 
+                  "security_group_id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1"
+                }
+              ]
+            }, 
+            {
+              "description": "", 
+              "id": "331fcb86-5772-4576-ac53-a5e9b237def2", 
+              "name": "icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "37b7c695-8da3-4a13-b5da-a872f420d064", 
+                  "port_range_max": 255, 
+                  "port_range_min": 0, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "a61c8ea1-97b3-4a1e-b9f5-c8a86aac35db", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T13:20:48Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }, 
+      "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3": {
+        "ansible_ssh_host": "84.39.42.157", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-02-03T23:39:33.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.157", 
+          "accessIPv6": "", 
+          "addresses": {
+            "net-ssbench": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:33:59:ab:09:7a", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "10.0.0.5", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:33:59:ab:09:7a", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.157", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-02-03T23:39:15Z", 
+          "flavor": {
+            "id": "45", 
+            "name": "n2.cw.standard-8"
+          }, 
+          "hostId": "af3584066c810e63e8e002015d9f4bfe3b6761aa162073a00792fb4d", 
+          "human_id": "ssbench-1", 
+          "id": "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.157", 
+          "key_name": "foucault", 
+          "metadata": {}, 
+          "name": "ssbench-1", 
+          "networks": {
+            "net-ssbench": [
+              "10.0.0.5", 
+              "84.39.42.157"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.157", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": null, 
+              "id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1", 
+              "name": "default", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "3b7e6dd3-bf5f-43e3-b2b2-1a93c794a0a2", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": null, 
+                  "remote_ip_prefix": null, 
+                  "security_group_id": "bf1dd98e-5b9c-40d2-9785-b4572434b4f1"
+                }
+              ]
+            }, 
+            {
+              "description": "", 
+              "id": "331fcb86-5772-4576-ac53-a5e9b237def2", 
+              "name": "icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "37b7c695-8da3-4a13-b5da-a872f420d064", 
+                  "port_range_max": 255, 
+                  "port_range_min": 0, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "a61c8ea1-97b3-4a1e-b9f5-c8a86aac35db", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "331fcb86-5772-4576-ac53-a5e9b237def2"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T13:20:47Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }, 
+      "d6b502fd-5aed-46c7-89d4-500519837548": {
+        "ansible_ssh_host": "84.39.42.197", 
+        "openstack": {
+          "HUMAN_ID": true, 
+          "NAME_ATTR": "name", 
+          "OS-DCF:diskConfig": "MANUAL", 
+          "OS-EXT-AZ:availability_zone": "nova", 
+          "OS-EXT-STS:power_state": 1, 
+          "OS-EXT-STS:task_state": null, 
+          "OS-EXT-STS:vm_state": "active", 
+          "OS-SRV-USG:launched_at": "2016-03-08T22:39:47.000000", 
+          "OS-SRV-USG:terminated_at": null, 
+          "accessIPv4": "84.39.42.197", 
+          "accessIPv6": "", 
+          "addresses": {
+            "tf-net-north": [
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:47:9b:e7:20:08", 
+                "OS-EXT-IPS:type": "fixed", 
+                "addr": "192.168.199.6", 
+                "version": 4
+              }, 
+              {
+                "OS-EXT-IPS-MAC:mac_addr": "02:47:9b:e7:20:08", 
+                "OS-EXT-IPS:type": "floating", 
+                "addr": "84.39.42.197", 
+                "version": 4
+              }
+            ]
+          }, 
+          "az": "nova", 
+          "cloud": "envvars", 
+          "config_drive": "", 
+          "created": "2016-03-08T22:39:37Z", 
+          "flavor": {
+            "id": "43", 
+            "name": "n2.cw.standard-2"
+          }, 
+          "hostId": "af3584066c810e63e8e002015d9f4bfe3b6761aa162073a00792fb4d", 
+          "human_id": "tf-nomad-bst-00", 
+          "id": "d6b502fd-5aed-46c7-89d4-500519837548", 
+          "image": {
+            "id": "2686a1c3-cfbd-47e0-a182-305defbc8e09", 
+            "name": "Ubuntu 14.04"
+          }, 
+          "interface_ip": "84.39.42.197", 
+          "key_name": "foucault-perso", 
+          "metadata": {}, 
+          "name": "tf-nomad-bst-00", 
+          "networks": {
+            "tf-net-north": [
+              "192.168.199.6", 
+              "84.39.42.197"
+            ]
+          }, 
+          "os-extended-volumes:volumes_attached": [], 
+          "private_v4": "", 
+          "progress": 0, 
+          "public_v4": "84.39.42.197", 
+          "public_v6": "", 
+          "region": "fr2", 
+          "security_groups": [
+            {
+              "description": "ICMP and SSH Security groups", 
+              "id": "67728cbe-028c-4988-b9c1-d75330cee1f0", 
+              "name": "tf-sg-icmp-ssh", 
+              "security_group_rules": [
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "97625a1a-bcb3-4391-a4c1-da35ae1c064f", 
+                  "port_range_max": null, 
+                  "port_range_min": null, 
+                  "protocol": "icmp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "67728cbe-028c-4988-b9c1-d75330cee1f0"
+                }, 
+                {
+                  "direction": "ingress", 
+                  "ethertype": "IPv4", 
+                  "id": "5da83d09-c1e0-41a3-9212-21fed5e33b6f", 
+                  "port_range_max": 22, 
+                  "port_range_min": 22, 
+                  "protocol": "tcp", 
+                  "remote_ip_prefix": "0.0.0.0/0", 
+                  "security_group_id": "67728cbe-028c-4988-b9c1-d75330cee1f0"
+                }
+              ]
+            }
+          ], 
+          "status": "ACTIVE", 
+          "tenant_id": "1b1286db216e403694802b41c4137182", 
+          "updated": "2016-03-08T22:39:47Z", 
+          "user_id": "bac41d68dcfd4eb19e1524f9e6a7c2fb", 
+          "volumes": []
+        }
+      }
+    }
+  }, 
+  "envvars": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "envvars_fr2": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "envvars_fr2_nova": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "flavor-n2.cw.standard-2": [
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "flavor-n2.cw.standard-8": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57"
+  ], 
+  "fr2": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "fr2_nova": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "image-Ubuntu 14.04": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "instance-05410287-9df0-440a-8b19-9d5b4b4c2b57": [
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57"
+  ], 
+  "instance-255bccf0-aeba-4207-a16e-dabb1bc3565f": [
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f"
+  ], 
+  "instance-66356209-3bed-41a7-8e43-58d19a4d21f8": [
+    "66356209-3bed-41a7-8e43-58d19a4d21f8"
+  ], 
+  "instance-938d7682-1f94-45b1-9e63-ac21464e40f2": [
+    "938d7682-1f94-45b1-9e63-ac21464e40f2"
+  ], 
+  "instance-9b787fc1-9e5d-4cdd-8927-1dab6dd956a2": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2"
+  ], 
+  "instance-b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3": [
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3"
+  ], 
+  "instance-d6b502fd-5aed-46c7-89d4-500519837548": [
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "nova": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2", 
+    "66356209-3bed-41a7-8e43-58d19a4d21f8", 
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3", 
+    "938d7682-1f94-45b1-9e63-ac21464e40f2", 
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f", 
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57", 
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "ssbench-1": [
+    "b65fd53e-14fd-4bb1-a02c-4f4c6898a6a3"
+  ], 
+  "ssbench-2": [
+    "9b787fc1-9e5d-4cdd-8927-1dab6dd956a2"
+  ], 
+  "ssbench-3": [
+    "05410287-9df0-440a-8b19-9d5b4b4c2b57"
+  ], 
+  "ssbench-4": [
+    "938d7682-1f94-45b1-9e63-ac21464e40f2"
+  ], 
+  "ssbench-5": [
+    "255bccf0-aeba-4207-a16e-dabb1bc3565f"
+  ], 
+  "tf-nomad-bst-00": [
+    "d6b502fd-5aed-46c7-89d4-500519837548"
+  ], 
+  "tf-nomad-rpx-00": [
+    "66356209-3bed-41a7-8e43-58d19a4d21f8"
+  ]
+}
